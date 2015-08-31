@@ -26,7 +26,7 @@ Where
   * **options** defines connection data
     * **options.name** hostname to be used when introducing the client to the MX server
     * **options.debug** if true, the connection emits all traffic between client and server as 'log' events
-
+    * **options.server** if specified, send mail to this ip rather than doing a DNS lookup
 **Example**
 
 ```javascript

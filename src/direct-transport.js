@@ -368,6 +368,14 @@ DirectMailer.prototype._clearStreams = function(mail, callback) {
  * @param {Function} callback Callback function to run
  */
 DirectMailer.prototype._resolveMx = function(domain, callback) {
+
+    if(this._options.server){
+        return callback(null, [{
+            'priority': 10,
+            'exchange': this._options.server
+        }])
+    }
+
     domain = domain.replace(/[\[\]]/g, '');
     // Do not try to resolve the domain name if it is an IP address
     if (net.isIP(domain)) {
